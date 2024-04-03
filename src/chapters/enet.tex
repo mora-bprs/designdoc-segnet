@@ -218,23 +218,17 @@ enet = enet.to(device)
 def loader(training_path, segmented_path, batch_size, h=320, w=1000):
     filenames_t = os.listdir(training_path)
     total_files_t = len(filenames_t)
-
     filenames_s = os.listdir(segmented_path)
     total_files_s = len(filenames_s)
-
     assert total_files_t == total_files_s
-
     if str(batch_size).lower() == "all":
         batch_size = total_files_s
-
     idx = 0
     while 1:
         # Choosing random indexes of images and labels
         batch_idxs = np.random.randint(0, total_files_s, batch_size)
-
         inputs = []
         labels = []
-
         for jj in batch_idxs:
             # Reading normalized photo
             img = plt.imread(training_path + filenames_t[jj])
@@ -286,78 +280,53 @@ eval_every = 5
           \begin{lstlisting}[language=Python]
 train_losses = []
 eval_losses = []
-
 bc_train = 367 // batch_size  # mini_batch train
 bc_eval = 101 // batch_size  # mini_batch validation
-
 # Define pipeline objects
 pipe = loader(f"{root_path}/train/", f"{root_path}/trainannot/", batch_size)
 eval_pipe = loader(f"{root_path}/val/", f"{root_path}/valannot/", batch_size)
-
 epochs = 100
-
 # Train loop
-
 for e in range(1, epochs + 1):
     train_loss = 0
     print("-" * 15, "Epoch %d" % e, "-" * 15)
-
     enet.train()
-
     for _ in tqdm(range(bc_train)):
         X_batch, mask_batch = next(pipe)
-
         # assign data to cpu/gpu
         X_batch, mask_batch = X_batch.to(device), mask_batch.to(device)
-
         optimizer.zero_grad()
-
         out = enet(X_batch.float())
-
         # loss calculation
         loss = criterion(out, mask_batch.long())
         # update weights
         loss.backward()
         optimizer.step()
-
         train_loss += loss.item()
-
     print()
     train_losses.append(train_loss)
-
     if (e + 1) % print_every == 0:
         print("Epoch {}/{}...".format(e, epochs), "Loss {:6f}".format(train_loss))
-
     if e % eval_every == 0:
         with torch.no_grad():
             enet.eval()
-
             eval_loss = 0
-
             # Validation loop
             for _ in tqdm(range(bc_eval)):
                 inputs, labels = next(eval_pipe)
-
                 inputs, labels = inputs.to(device), labels.to(device)
-
                 out = enet(inputs)
-
                 out = out.data.max(1)[1]
-
                 eval_loss += (labels.long() - out.long()).sum()
-
             print()
             print("Loss {:6f}".format(eval_loss))
-
             eval_losses.append(eval_loss)
-
     if e % print_every == 0:
         checkpoint = {"epochs": e, "state_dict": enet.state_dict()}
         torch.save(
             checkpoint, "{}/ckpt-enet-{}-{}.pth".format(root_path, e, train_loss)
         )
         print("Model saved!")
-
 print(
     "Epoch {}/{}...".format(e, epochs),
     "Total Mean Loss: {:6f}".format(sum(train_losses) / epochs),
@@ -414,12 +383,12 @@ plt.show()
               \caption{Image segmentation was noticeable but far from perfect.}
               \label{fig:using:test5}
           \end{figure}
-          \begin{figure}[H]
-              \centering
-              \includegraphics[width=450pt]{assets/enet/camvid/output1alt.png}
-              \caption{Unexpected results during a testing stage done at a later date}
-              \label{fig:using:test3}
-          \end{figure}
+          %   \begin{figure}[H]
+          %       \centering
+          %       \includegraphics[width=450pt]{assets/enet/camvid/output1alt.png}
+          %       \caption{Unexpected results during a testing stage done at a later date}
+          %       \label{fig:using:test3}
+          %   \end{figure}
     \item Color mapping and decoding: Executing the following code generates the segmented image and shows the ground truth which was already prepared to compare and observe the performance of the trained model.
           \begin{lstlisting}
 b_ = out1.data.max(0)[1].cpu().numpy()
@@ -481,12 +450,12 @@ plt.show()
               \caption{The initial test results were promising after a training session with 100 iterations}
               \label{fig:using:test4}
           \end{figure}
-          \begin{figure}[H]
-              \centering
-              \includegraphics[width=450pt]{assets/enet/camvid/out1alt.png}
-              \caption{The results were diminished in quality during another testing session with 100 iterations}
-              \label{fig:using:test6}
-          \end{figure}
+          %   \begin{figure}[H]
+          %       \centering
+          %       \includegraphics[width=450pt]{assets/enet/camvid/out1alt.png}
+          %       \caption{The results were diminished in quality during another testing session with 100 iterations}
+          %       \label{fig:using:test6}
+          %   \end{figure}
 \end{enumerate}
 
 
