@@ -1,0 +1,50 @@
+\chapter{Introduction}\label{ch:intro}
+\pagenumbering{arabic} \setcounter{page}{1}
+% \renewcommand*{\thesection}{\textbf{\alph{section}}}
+% \renewcommand*{\thesubsection}{\roman{subsection}}
+% \setcounter{section}{0}
+
+% \section*{Introduction}
+
+% \section*{Outline of the Solution}
+% \renewcommand*{\thesubsection}{\alph{subsection}}
+% \subsection{Requirement Analysis}
+Image segmentation is a critical task in computer vision, enabling the partitioning of digital images into multiple segments to identify and delineate objects and regions of interest. This project aims to explore and implement practical techniques for efficient image segmentation, with a focus on leveraging deep learning models and state-of-the-art architectures.
+
+The document outlines the research and development process undertaken to implement a robust image segmentation pipeline, encompassing background research, exploration of techniques, selection of frameworks and tools, and the initial setup for training and testing models.
+
+\section{Background Research 1/3/2024}
+There are two main types of image segmentation tasks: class segmentation and object segmentation. Class segmentation, also known as semantic segmentation, assigns semantic labels like "car" or "person" to each pixel in an image based on its class. This method is commonly used in applications such as autonomous driving and scene understanding. On the other hand, object segmentation, or instance segmentation, identifies and delineates individual objects within an image, assigning a unique mask to each object. Object segmentation is often utilized for tasks like tracking specific objects, such as in self-driving cars programmed to follow a particular vehicle.
+
+\section{Exploring practical image segmentation techniques}
+Efficiently implementing image segmentation involves crucial decision-making throughout the project life cycle. Some of the key factors that were found during the initial research are as follows,
+
+\begin{enumerate}
+  \item Choice of the deep learning framework: Pytorch or TensorFlow when it comes to python based frameworks.
+  \item Choosing a good model architecture for the network design.
+  \item Selecting an effective loss function to optimize and evaluate the model.
+  \item Avoiding over-fitting and under-fitting.
+  \item Evaluating the model's accuracy and efficiency comparatively.
+\end{enumerate}
+
+\section{Initial Setup 6/3/2024}
+Properly setting up an environment for the model to training and testing is the hardest challenge in the implementation part. Various platforms such as \textbf{Kaggle}, \textbf{Deepnote}, \textbf{Pycharm} and \textbf{Datagrip} from JetBrains, and deep learning frameworks such as \textbf{TensorFlow}, \textbf{Pytorch}, \textbf{Caffe} and \textbf{Keras} were tried out as part of the exploration phase to decide on the compatibility of the setup with our project.
+
+While platforms like Kaggle, Deepnote, PyCharm, and DataGrip from JetBrains offer valuable features, they were not chosen for our project due to various limitations. Kaggle and Deepnote, although providing cloud-based environments, often have restrictions on computational resources, limiting their suitability for training complex models like SegNet. PyCharm and DataGrip, on the other hand, are primarily used for local development, which can be computationally constrained for resource-intensive tasks. Additionally, these platforms may lack seamless integration with specific deep learning libraries required for our project.
+
+Similarly, deep learning frameworks like TensorFlow, Caffe, and Keras were not selected due to their inherent characteristics. TensorFlow, while powerful, can be more complex and less intuitive for research and rapid prototyping compared to PyTorch. Caffe, although efficient, has a smaller community and limited support compared to more widely adopted frameworks. Keras, while user-friendly, is a high-level library built on top of other frameworks, which may introduce additional complexity and limitations for our specific requirements.
+
+The following setup was decided as the way to test, the models we were assigned and the models we find moving forward on our research.
+
+\begin{description}
+  \item[Google Colab:] We opt to utilize Google Colab for implementing the models for training and testing due to several compelling reasons. Firstly, Google Colab provides a free and accessible cloud-based environment equipped with powerful GPUs, enabling faster model training compared to local machines, especially for computationally intensive tasks like image segmentation. Moreover, Colab offers seamless integration with popular deep learning libraries such as TensorFlow and PyTorch, simplifying the setup process and facilitating efficient implementation of complex models like SegNet. Additionally, Colab allows for collaborative work, enabling teams to share and collaborate on projects effortlessly. Its integration with Google Drive facilitates easy data access and storage, streamlining the entire workflow from data preparation to model evaluation. Overall, leveraging Google Colab for implementing the models ensures efficient, scalable, and collaborative model development for image segmentation tasks.
+
+  \item[Pytorch:] PyTorch is a cutting-edge open-source deep learning framework designed for both research and production deployment. We selected Pytorch as the framework mostly due to following reasons,
+
+        \begin{description}
+          \item[Flexibility:] PyTorch is a flexible framework that allows you to create and train neural networks in a variety of ways. You can use pre-trained models, or you can create your own from scratch easily compared to other libraries.
+          \item[Back-end support:] PyTorch supports multiple back-ends such as GPU/TPU hardware.
+          \item[Domain libraries:] PyTorch has a rich set of domain libraries that make working with specific data verticals convenient. For example, for vision (image/video) related AI, PyTorch provides a builtin library called torchvision that we'll use extensively throughout this series.
+          \item[Ease of use and community adoption:] PyTorch is an easy-to-use framework that is well-documented and has a large community of users and developers. Many researchers use PyTorch for their experiments, and the results in their published papers have an implementation of the model in PyTorch freely available.
+        \end{description}
+\end{description}

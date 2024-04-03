@@ -1,0 +1,34 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [
+        "unpooling",
+        "maxpool",
+        "conv",
+        "optim",
+        "prelu",
+        "batchnorm",
+        "fname",
+        "imread",
+        "enet",
+        "fullconv",
+        "relu",
+        "segnet",
+        "segmap"
+    ],
+    "ignoreWords": [
+        "Arunava",
+        "Kaggle",
+        "Colab",
+        "numpy",
+        "matplotlib",
+        "pyplot",
+        "tqdm",
+        "pytorch",
+        "cuda",
+        "Roboflow"
+    ],
+    "import": []
+}

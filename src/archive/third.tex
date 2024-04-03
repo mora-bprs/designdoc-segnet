@@ -1,0 +1,74 @@
+\chapter{Interfaces \& Others}\label{ch:interfaces}
+
+\section{Rear panel connectors}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\linewidth]{assets/rearmount.jpg}
+\caption{Labeled Interfaces of \emph{ASUS P5QPL-AM}} \label{fig:using:samplepngImage}
+\end{center}
+\end{figure}
+\begin{enumerate}
+    \item \textbf{PS/2 mouse port(green)} : for PS/2 mouse -  Proprietary PS/2 protocol.
+    \item \textbf{PS/2 keyboard port(purple)} : for a PS/2 keyboard -  Proprietary PS/2 protocol.
+    \item \textbf{LAN(RJ-45) port} : The motherboard has a Gigabit Ethernet port. This port can be used to connect the computer to a wired network. Also the LAN port has a LED indication to show the speed status of the network.
+    \begin{itemize}
+        \item The RJ-45 port of the ASUS P5QPL-AM motherboard uses the PCI Express (PCIe) protocol to connect with the CPU.The PCIe protocol uses a point-to-point connection between the device and the motherboard.
+        \item The RJ-45 port on the ASUS P5QPL-AM motherboard is connected to the motherboard's PCIe controller chip. The PCIe controller chip is responsible for managing the data traffic between the RJ-45 port and the CPU. - Ethernet protocol (IEEE 802.3) for communication with the CPU.
+    \end{itemize}
+        
+    \item \textbf{Parallel port} : 25 pin port used to connect parallel printer, scanner or other devices.
+    \item \textbf{Line In port(blue)} : connects audio sources and CD, DVD player
+    \item \textbf{Line Out port(lime)} : connects headphone or speaker(audio out)
+    \item \textbf{Microphone port(pink)} : connects a microphone
+    \item \textbf{Video Graphics Adapter port} : 15 pin for a VGA monitor or other VGA compatible devices.
+    \item \textbf{COM port} : for pointing devices or serial devices.
+    \item \textbf{USB 2.0 ports} : 4-pin Universal Serial Bus(USB) ports used for connecting USB 2.0 devices - USB 2.0 protocol for data exchange with the CPU.
+\end{enumerate}
+
+\section{On Board Connectors and Expansions}
+\begin{enumerate}
+    \item \textbf{Serial ATA connectors(7 pin SATA)} : connectors for the Serial ATA hard disk drives.
+    \item \textbf{Speaker connector} : 4 pin connector for system warning speaker(beeps and warnings).
+    \item \textbf{Optical drive audio connector} : 4 pin connector which allows receiving stereo audio input from sound sources such as a CD-ROM, TV tuner or MPEG card.
+    \item \textbf{Front pannel audio connector} : supports either HD audio or legacy AC 97 audio standard.
+    \item \textbf{Power connectors} : 12V ATX Power connectors are used to give the required power for the whole motherboard from the power supply. There are two connectors, 4-pin and 24-pin ATX.
+    \item \textbf{USB connectors} : 10-1 pin USB56, USB78 are for USB 2.0 ports. The USB connectors on the motherboard support the USB 2.0 specification, which allows for data transfer speeds of up to 480 Mbps.
+    \item \textbf{PCI slots} : this slot supports LAN cards, SCSI cards, USB cards and other cards that supports PCI specifications. The PCI slot is compatible with PCI expansion cards that are compliant with the PCI 2.3 specification. - PCI bus protocol for communication with the CPU.
+    \item \textbf{IDE connectors} : This connector is for the Ultra DMA 100/66/33 signal cable. 
+     \item \textbf{ATX power connectors} : These connectors are used for ATX power supply plugs. 
+    
+    % bugga PCIE engada ........... matha bugga
+    %mother boardla kidakku....
+    % ada kothari viluvaanne
+\end{enumerate}
+% The main conclusions for this chapter.
+\section{Protocols and Performance}
+The \emph{ASUS P5QPL-AM} motherboard features a variety of I/O ports and interfaces that accommodate different communication protocols. These include high-speed Gigabit Ethernet for network connectivity, medium-speed SATA ports for storage devices, USB 2.0 ports for versatile peripheral connection, and the low-speed legacy PS/2 ports for keyboard and mouse, PCI slots for expansion, VGA port for display, and PCIe slots for various expansion cards. Each protocol caters to specific communication needs, contributing to the motherboard's overall functionality and compatibility. It shoul
+
+\section{Cooling Systems}
+
+The \emph{ASUS P5QPL-AM} motherboard has an active cooling system. This means that it has fans or other active cooling devices to cool the motherboard components. The fan is located on the heatsink above the CPU. The fans help to circulate air around the motherboard, which helps to keep the components cool.
+
+The motherboard has a large aluminum heatsink that covers the CPU socket. This heatsink is connected to the motherboard by some removable plastic screws. The metalblock in heatsink helps to transfer heat away from the CPU and to the heatsink fins, where it can be dissipated into the air using fan. The motherboard also has a small heatsink that covers the Northbridge and the Southbridge chipsets. These heatsinks are not as large as the CPU heatsink, but it is still effective at dissipating heat. It should be noted that there were remains of thermal paste on the chipsets and processor when the heatsinks were removed, signifying the importance of thermal compounds in providing a good thermal flow between the heatsink and the chips.
+
+\section{Jumpers}
+\begin{enumerate}
+    \item \textbf{Clear RTC RAM (4 in fig \ref{fig:using:mbdissected})} \\ 
+        The CMOS RTC RAM data can be cleared by shorting the pins of the Clear RTC RAM jumper. This will erase the CMOS memory, which includes the date, time, and system setup parameters. The CMOS memory is powered by the onboard button cell battery, and it stores system setup information such as system passwords.
+    \item \textbf {Keyboard power (3-pin KBPWR) (1 in fig \ref{fig:using:mbdissected})} \\
+        The keyboard wake-up feature allows you to wake up the computer by pressing a key on the keyboard. To enable this feature, you need to set the jumper to pins 2–3 (+5VSB). This feature requires an ATX power supply that can supply at least 1A on the +5VSB lead, and a corresponding setting in the BIOS.
+    \item \textbf{USB device wake-up (2 in fig \ref{fig:using:mbdissected})} \\
+        The USB device wake-up feature allows you to wake up the computer from sleep mode using the connected USB devices. To enable this feature, you need to set the jumper to +5V for S1 sleep mode and +5VSB for S3 and S4 sleep modes.
+
+
+\end{enumerate}
+
+\section{Others}
+\begin{enumerate}
+  \item \textbf{Onboard LED (5 in fig \ref{fig:using:mbdissected})}:The motherboard comes with a standby power LED that lights up to indicate that the system is ON, in sleep mode, or in soft-off mode.
+  \item \textbf{CMOS Battery}: Provides power to the CMOS chip, which stores essential system configuration information even when the computer is powered off.
+  \item \textbf{Atheros L1E}: The Atheros L1E chip is an Ethernet controller, developed by Atheros Communications. It is built onto the motherboard to enable Ethernet functionality.It supports various Ethernet standards, such as 10/100/1000 Mbps Gigabit Ethernet, allowing for high-speed data transfer over a wired network
+    \item \textbf{ALC887}: The ALC887 is a high-performance audio chip designed by Realtek. The ALC887 provides 7.1-channel HD audio playback, enabling high definition sound reproduction with minimum distortion. The chip is able to produces rich and strong audio output for headphones using its built-in headphone amplifier.
+      \item \textbf{ICS 9LRS95}: The ICS 9LRS954 is a highly integrated clock generator chip developed by Integrated Device Technology (IDT). This chip has been used to provide accurate and stable clock signals for various components, ensuring synchronized and efficient operation.
+    \item \textbf{CMOS Battery}: Provides power to the CMOS chip, which stores essential system configuration information even when the computer is powered off.
+\end{enumerate}

@@ -1,0 +1,43 @@
+\chapter{Additional Components}\label{ch:protection}
+\section{Cooling Systems}
+
+The ASUS P5QPL-AM motherboard has an active cooling system. This means that it has fans or other active cooling devices to cool the motherboard components. The fan is located on the heatsink above the CPU. The fans help to circulate air around the motherboard, which helps to keep the components cool.
+
+The motherboard has a large aluminum heatsink that covers the CPU socket. This heatsink is connected to the motherboard by a heatpipe. The heatpipe helps to transfer heat away from the CPU and to the heatsink fins, where it can be dissipated into the air using fan. The motherboard also has a small heatsink that covers the Northbridge chip. This heatsink is not as large as the CPU heatsink, but it is still effective at dissipating heat.
+
+% The ASUS P5QPL-AM is a budget motherboard, so it does not have the most advanced cooling system. However, it is still capable of keeping the motherboard components cool under normal operating conditions. 
+
+% The ASUS P5QPL-AM motherboard has three temperature sensors for heat control:
+% \begin{enumerate}
+%   \item CPU sensor: This sensor is located near the CPU socket and monitors the temperature of the CPU.
+%   \item System sensor: This sensor is located near the chipset and monitors the temperature of the motherboard.
+%   \item Chassis sensor: This sensor is located near the chassis and monitors the temperature of the air inside the computer case.
+% \end{enumerate}
+
+\section{Jumpers}
+\begin{enumerate}
+    \item Clear RTC RAM : \\ 
+        The CMOS RTC RAM data can be cleared by shorting the pins of the Clear RTC RAM jumper. This will erase the CMOS memory, which includes the date, time, and system setup parameters. The CMOS memory is powered by the onboard button cell battery, and it stores system setup information such as system passwords.
+    \item Keyboard power (3-pin KBPWR) : \\
+        The keyboard wake-up feature allows you to wake up the computer by pressing a key on the keyboard. To enable this feature, you need to set the jumper to pins 2–3 (+5VSB). This feature requires an ATX power supply that can supply at least 1A on the +5VSB lead, and a corresponding setting in the BIOS.
+    \item USB device wake-up : \\
+        The USB device wake-up feature allows you to wake up the computer from sleep mode using the connected USB devices. To enable this feature, you need to set the jumper to +5V for S1 sleep mode and +5VSB for S3 and S4 sleep modes.
+
+
+\end{enumerate}
+\section{ICs}
+\subsection{Atheros L1E}
+
+The Atheros L1E chip is an Ethernet controller, developed by Atheros Communications, which is now a part of Qualcomm. The Atheros L1E chip is intended to provide fast and reliable wired network connectivity to various computing devices. It is built onto the motherboard to enable Ethernet functionality.It supports various Ethernet standards, such as 10/100/1000 Mbps Gigabit Ethernet, allowing for high-speed data transfer over a wired network
+
+\subsection{ALC887}
+The ALC887 is a high-performance audio chip designed by Realtek, popular for its sophisticated audio solutions. The ALC887 provides 7.1-channel HD audio playback, enabling high definition sound reproduction with minimum distortion. The chip is able to produces rich and strong audio output for headphones using its built-in headphone amplifier. The ALC887 also has a broad range of audio connections, including Line-In, Line-Out, and Mic-In, offering varied connectivity options.
+
+\section{Others}
+\begin{enumerate}
+  \item Standby LED
+  \item CMOS Battery
+\end{enumerate}
+
+
+

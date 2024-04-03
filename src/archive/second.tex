@@ -1,0 +1,69 @@
+\chapter{Motherboard \& Component Analysis}\label{ch:main}
+
+\section{Motherboard Specifications}
+The \emph{ASUS P5QPL-AM} motherboard was manufactured by ASUSTeK Computer Inc. and released to market in 2009. This board is one of the smallest of MicroATX form factor coming in dimensions of 24.4 cm x 19.3 cm. 
+
+\begin{figure}[H]
+\begin{minipage}[t]{7.2cm}
+\begin{center}
+\includegraphics[height=55mm]{assets/method/mb_market.jpg}
+\caption{Market Image}
+\label{fig:using:marketmbimage}
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{7.2cm}
+\begin{center}
+\includegraphics[height=50mm]{assets/method/mb_real.jpeg}
+\caption{Dissected Board}
+\label{fig:using:dissectedmbimage}
+\end{center}
+\end{minipage}
+\end{figure}
+
+\subsection{Processor}
+The ASUS P5QPL-AM motherboard is developed to deliver solid compatibility with a wide array of Intel LGA775 CPUs. The board has a single Intel LGA775 socket compatible with 45nm CPU architectures. Intel Core 2 Extreme, Core 2 Quad, Core 2 Duo, Pentium Dual-Core, Celeron Dual-Core, and Celeron CPUs are a few of the supported CPUs that are on the market. The board provides 1333 Mhz FSB maximal frequency to 800 Mhz minimal frequency for these processors. With that it also supports Muticore and "Hyper-Threading"
+It should be noted that current CPUs and their respective motherboards are supporting less than 10nm scale and have far more efficiency and performance per watt compared to this board.
+
+\subsection{Main Memory}
+ASUS P5QPL-AM has a robust dual-channel memory architecture. It features two 240-pin DIMM sockets that can accommodate un-buffered non-ECC DDR2 memory modules running at speeds of 1066MHz (overclocking), 800MHz, and 667MHz. This flexibility allows users to tailor their system's memory configuration to meet their specific needs. It has the capacity to support up to 8GB of system memory. However, it's important to note that when installing a total memory capacity of 4GB or more, users employing a 32-bit operating system might encounter recognition limitations, with the system potentially identifying less than 3GB of the installed memory. To optimize compatibility, ASUS recommends a maximum of 3GB of system memory in such cases. Users seeking to explore the most suitable memory options can refer to the Memory Qualified Vendors List (QVL) on the ASUS website or the provided user manual for certified memory module selections.
+
+\subsection{ROM}
+ASUS P5QPL-AM comes equipped with a high-performance ROM solution. With an 8Mb Flash ROM, the ROM features an AMI BIOS, which represents a robust and well-established BIOS standard, ensuring compatibility and stability for a wide range of hardware and software components. The motherboard's Plug and Play (PnP) capabilities simplify the installation and setup process, while the inclusion of DMI v2.0 (Desktop Management Interface) facilitates effective hardware management and monitoring. The incorporation of WEM 2.0 (Windows Embedded Standard) underscores the motherboard's adaptability for various computing environments. Furthermore, the ACPI v2.0a (Advanced Configuration and Power Interface) support enhances power management and system efficiency. The ROM's compatibility with SM BIOS v2.5 (System Management BIOS) ensures seamless communication between the operating system and the hardware components, enabling accurate reporting and monitoring of system health.
+
+\subsection{Connectivity}
+The board effectively maintains connectivity between its components and external devices through a well-structured architecture comprising the Northbridge and Southbridge chipsets. These two chipsets play distinct yet complementary roles in managing data flow and communication within the system.
+
+The Northbridge chipset "Intel G41", situated closer to the processor, serves as a high-speed link between the CPU and critical components like the memory and graphics card. It facilitates rapid data transfer by managing the front-side bus (FSB) between the CPU and the memory modules. Additionally, it supports the graphics interface, enabling seamless communication between the CPU and the onboard(G41 employs an Intel GMA X4500) or dedicated graphics card.
+
+In contrast, the Southbridge chipset "Intel ICH7", focuses on connecting and controlling the I/O devices and peripherals. It manages a diverse range of components, including USB ports, SATA connectors, PCI slots and audio interfaces. The Southbridge ensures efficient data exchange between the processor and these devices, supporting various data transfer protocols and standards. It should be noted that, for storage expansion, the "Intel ICH7" supports up to 4x SATA 3Gb/s ports and an additional UltraDMA 100 IDE Connector.
+
+Together, the Northbridge and Southbridge chipsets create a comprehensive platform for connectivity and interaction within the ASUS P5QPL-AM motherboard. The Northbridge handles the high-speed links between the processor, memory, and graphics, while the Southbridge manages the diverse array of external devices. This division of labor optimizes data flow, enhances system responsiveness, and provides the foundation for a versatile and functional computing experience.
+
+It is also found through academic research that the current boards and systems do not employ this functional flow of Northbridge and Southbridge. Due to the ever increasing speed and technological advancements, currently processors themselves have the capabilities of both of these bridges by including the required accelerators, interfaces and controllers within their hardware designs. This new "chiplet" design on a single SoC is far more efficient and provides more performance.
+
+\section{Component Identification}
+\begin{figure}[H]
+\centering
+\includegraphics[height=160mm]{assets/method/mb_real_an.jpeg}
+\caption{Annotated Diagram of Inspected Motherboard}
+\label{fig:using:mbdissected}
+\end{figure}
+
+The above diagram describes the physical inspection results in annotation. Various types of Integrated Circuit packages serving different purposes of the computing system were found. With that the I/O interfaces facilitating that with peripheral connectivity is also identified. Pin-outs and jumpers for configuring the motherboard and adding additional interfaces and features to the motherboard via a suitable enclosure were noticed.
+
+With that some irregularities with our board due to wear and mistakes should also be mentioned. When comparing with the marketed image files we identified a missing safety capacitor in our board. The CPU fan and heat sink which is mounted on the "LGA775" socket and the heat sink for the "Intel G41 Northbridge chip-set" were misplaced during transportation.
+% \subsection{Integrated Circuits}
+
+\section{Functional Block Diagram}
+% The figure~\ref{fig:using:functionalblockImage} below describes the functional flow of the selected motherboard and the components we have seen in an understandable way.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=210mm,angle=-90,origin=c]{assets/func.png}
+\caption{Functional Block Diagram of \emph{ASUS P5QPL-AM}} \label{fig:using:functionalblockImage}
+\end{center}
+\end{figure}
+
+
+
